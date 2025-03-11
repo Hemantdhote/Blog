@@ -10,6 +10,7 @@ const DashBoard = () => {
     title:"",
     discription:""
   });
+  
 
 
   function submitHandler(e) {
@@ -49,11 +50,11 @@ const DashBoard = () => {
       </div>
 
       <div className='w-full flex  flex-col  mt-5 items-center justify-center'> 
-        <h1 className='mb-3 text-xl font-bold text-green-500'>Create Blog</h1>
+        <h1 className='mb-3 text-xl font-bold text-green-500'>{editIndex!==null?"Update Blog":"Create Blog"}</h1>
         <form onSubmit={submitHandler} className='flex flex-col items-center justify-center gap-3'>
           <input value={formData.title} onChange={(e)=>setformData({...formData,title:e.target.value})}  className='px-10 py-2 bg-neutral-600 rounded-md outline-none text-white' type="text" placeholder='Enter the title' />
           <textarea value={formData.discription} onChange={(e)=>setformData({...formData,discription:e.target.value})} className='px-12 py-2 bg-neutral-600 rounded-md outline-none text-white' type="text" placeholder='Enter the discription' />
-          <button  className='px-7 py-2 bg-blue-500 text-white rounded-md'>Create</button>
+          <button  className='px-7 py-2 bg-blue-500 text-white rounded-md'>{editIndex!==null?"Update":"Create"}</button>
 
         </form>
       </div>
