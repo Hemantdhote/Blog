@@ -15,8 +15,9 @@ const Register = () => {
     setUser(storedUsers);
   }, []);
 
-  console.log(user);
   
+  
+  console.log(user);
   
 
 
