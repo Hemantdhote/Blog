@@ -40,6 +40,7 @@ const Login = () => {
           <input value={formData.email} onChange={(e)=>setFormData({...formData,email:e.target.value})} className='px-3 py-2 bg-neutral-300 rounded-md outline-none' type="text" placeholder='Enter your email' />
           <input value={formData.password} onChange={(e)=>setFormData({...formData,password:e.target.value})} className='px-3 py-2 bg-neutral-300 rounded-md outline-none' type="password" placeholder='Enter the password' />
           <button to={"/navbar"} className='bg-blue-500 text-white rounded-md px-5 py-2'>Login</button>
+          <p>If you dont't have account ? <Link to={"/"} className='text-blue-600'>Click Here</Link> </p>
         </form>
       </div>
       

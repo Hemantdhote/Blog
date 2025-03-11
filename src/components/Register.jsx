@@ -14,10 +14,6 @@ const Register = () => {
     const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
     setUser(storedUsers);
   }, []);
-
-  
-  
-  console.log(user);
   
 
 
@@ -69,7 +65,6 @@ const Register = () => {
           <input value={createUser.email} onChange={(e)=>setCreateUser({...createUser,email:e.target.value})} className='px-3 py-2 bg-neutral-300 rounded-md outline-none' type="text" placeholder='Enter your Email' required/>
           <input value={createUser.password} onChange={(elem)=>setCreateUser({...createUser,password:elem.target.value})} className='px-3 py-2 bg-neutral-300 rounded-md outline-none ' type="password"  placeholder='Enter password' required/>
           <button className='px-20 py-2 bg-green-500 rounded-md outline-none text-white'>submit</button>
-
           <p>If you have already account ? <Link to={"/login"} className='text-blue-600'>Please login</Link> </p>
         </form>
       </div>
