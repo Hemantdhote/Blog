@@ -48,13 +48,6 @@ const Register = () => {
 
     }
    
-
-
-  
-  
-
-  
-
   return (
     <div>
 
