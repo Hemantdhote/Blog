@@ -1,7 +1,7 @@
 import React from 'react'
 import DashBoard from './DashBoard'
 
-const Blog = ({data,index,deleteHandler}) => {
+const Blog = ({data,index,deleteHandler ,editHandler}) => {
   
 
   
@@ -13,7 +13,7 @@ const Blog = ({data,index,deleteHandler}) => {
           <h1 className='text-xl font-bold'>{data.title}</h1>
           <div className='w-68 block'>{data.discription}</div>
           <div className='flex items-center justify-between mt-3'>
-            <button className='px-3 py-2 bg-blue-500 rounded-md text-white'>Edit</button>
+            <button onClick={()=>editHandler(index)} className='px-3 py-2 bg-blue-500 rounded-md text-white'>Edit</button>
             <button onClick={()=>deleteHandler(index)}  className='px-3 py-2 bg-red-500 rounded-md text-white'>Delete</button>
           </div>
         </div>

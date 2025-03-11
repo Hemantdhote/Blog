@@ -4,24 +4,39 @@ import { Link, useNavigate } from 'react-router-dom'
 import Blog from './Blog';
 
 const DashBoard = () => {
+  const [editIndex, setEditIndex] = useState(null);
   const [data, setData] = useState([]);
   const [formData, setformData] = useState({
     title:"",
     discription:""
   });
 
-  function submitHandler(e){
+
+  function submitHandler(e) {
     e.preventDefault();
-    setData([...data,formData]);
+    if (editIndex !== null) {
+      const updatedData = data.map((item, index) => 
+        index === editIndex ? formData : item
+      );
+      setData(updatedData);
+      setEditIndex(null);
+    } else {
+      setData([...data, formData]);
+    }
     setformData({
-      title:"",
-      discription:""
-    })
+      title: "",
+      discription: ""
+    });
   }
 
   function deleteHandler(index){
     const filteredData=data.filter((_,idx)=>idx!==index)
     setData(filteredData)
+  }
+
+  function editHandler(index) {
+    setEditIndex(index);
+    setformData(data[index]); 
   }
   
 
@@ -46,7 +61,7 @@ const DashBoard = () => {
       <div className='p-4 mt-4 flex gap-5 flex-wrap'>
 
         {data.map((elem,index)=>(
-        <Blog key={index} data={elem} index={index} deleteHandler={deleteHandler} />
+        <Blog key={index} data={elem} index={index} deleteHandler={deleteHandler} editHandler={editHandler} />
 
         ))}
 
