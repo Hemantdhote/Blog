@@ -9,12 +9,13 @@ const Blog = ({data,index,deleteHandler ,editHandler}) => {
   
   return (
     <div>
-        <div className='p-5 bg-zinc-800 text-white w-68 rounded-md'>
-          <h1 className='text-xl font-bold'>{data.title}</h1>
-          <div className='w-68 block'>{data.discription}</div>
+        <div className='p-5  bg-[#FFFFFF] w-68 rounded-md shadow-lg shadow-blue-300/50'>
+          <h1 className='text-xl font-bold capitalize'>{data.title}</h1>
+          <p className='h-10 block block'>{data.discription}</p>
+          <button className='btn'>comment</button>
           <div className='flex items-center justify-between mt-3'>
-            <button onClick={()=>editHandler(index)} className='px-3 py-2 bg-blue-500 rounded-md text-white'>Edit</button>
-            <button onClick={()=>deleteHandler(index)}  className='px-3 py-2 bg-red-500 rounded-md text-white'>Delete</button>
+            <button onClick={()=>editHandler(index)} className='px-3 py-2 bg-zinc-400 rounded-md text-white'>Edit</button>
+            <button onClick={()=>deleteHandler(index)}  className='px-3 py-2 bg-[#F5BA13] rounded-md text-white'>Delete</button>
           </div>
         </div>
       

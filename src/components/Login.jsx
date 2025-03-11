@@ -33,15 +33,18 @@ const Login = () => {
     
   }
   return (
-    <div>
+    <div className='bg-neutral-100'>
       <div className='flex flex-col items-center justify-center h-screen w-full'>
-        <h1 className='mb-5 font-bold text-xl'>Login User</h1>
+        <div className='bg-white shadow-lg shadow-blue-300/50 px-8 py-15 rounded-lg'>
+       
         <form onSubmit={submitHandler} className='flex flex-col items-center justify-center gap-3 '>
-          <input value={formData.email} onChange={(e)=>setFormData({...formData,email:e.target.value})} className='px-3 py-2 bg-neutral-300 rounded-md outline-none' type="text" placeholder='Enter your email' />
-          <input value={formData.password} onChange={(e)=>setFormData({...formData,password:e.target.value})} className='px-3 py-2 bg-neutral-300 rounded-md outline-none' type="password" placeholder='Enter the password' />
-          <button to={"/navbar"} className='bg-blue-500 text-white rounded-md px-5 py-2'>Login</button>
+        <h1 className='mb-3 font-bold text-xl'>Login User</h1>
+          <input value={formData.email} onChange={(e)=>setFormData({...formData,email:e.target.value})} className='px-3 py-2 bg-neutral-100 rounded-md outline-none' type="text" placeholder='Enter your email' />
+          <input value={formData.password} onChange={(e)=>setFormData({...formData,password:e.target.value})} className='px-3 py-2 bg-neutral-100 rounded-md outline-none' type="password" placeholder='Enter the password' />
+          <button to={"/navbar"} className='bg-orange-400 text-white rounded-md px-5 py-2'>Login</button>
           <p>If you dont't have account ? <Link to={"/"} className='text-blue-600'>Click Here</Link> </p>
         </form>
+        </div>
       </div>
       
     </div>
