@@ -42,21 +42,20 @@ const DashBoard = () => {
   
 
   return (
-    <div className='w-full bg-neutral-100 h-screen'>
+    <div className='w-full bg-neutral-100 min-h-screen'>
       
       <div className='bg-[#F5BA13] flex items-center justify-between px-8 py-8 w-[100vw] text-white '>
-      <h1 className='text-xl font-bold'> Blogs</h1>
-      <Link className='' to={"/"} >Logout</Link>
+      <h1 className='text-[1.5vw] font-bold'> Blogs</h1>
+      <Link className='text-[1vw]' to={"/"} >Logout</Link>
       </div>
 
 <div className='flex items-center justify-center '>   
      <div className='w-[30%] flex items-start rounded-lg mt-10  bg-[#FFFFFF] p-2 relative p-8 shadow-lg shadow-black-300/50'> 
         {/* <h1 className='mb-3 text-xl font-bold text-green-500'>{editIndex!==null?"Update Blog":"Create Blog"}</h1> */}
         <form onSubmit={submitHandler} className='flex flex-col items-center justify-center gap-3'>
-          <input value={formData.title} onChange={(e)=>setformData({...formData,title:e.target.value})}  className='rounded-md outline-none text-lg' type="text" placeholder='Enter the title' />
-          <input value={formData.discription} onChange={(e)=>setformData({...formData,discription:e.target.value})} className='px-12 rounded-md outline-none text-lg' type="text" placeholder='Enter the discription' />
-          <button  className=' right-[10%] top-[80%] absolute h-13 w-13 bg-[#F5BA13] text-white rounded-[50%] text-md'>{editIndex!==null?"Update":"Add"}</button>
-
+          <input value={formData.title} onChange={(e)=>setformData({...formData,title:e.target.value})}  className='rounded-md outline-none text-[1.3vw]' type="text" placeholder='Enter the title' />
+          <input value={formData.discription} onChange={(e)=>setformData({...formData,discription:e.target.value})} className='px-12 rounded-md outline-none text-[1.3vw]' type="text" placeholder='Enter the discription' />
+          <button  className=' right-[10%] top-[80%] absolute h-[4vw] w-[4vw] bg-[#F5BA13] text-white rounded-[50%] text-[1vw]'>{editIndex!==null?"Update":"Add"}</button>
         </form>
       </div>
       </div>
@@ -66,7 +65,7 @@ const DashBoard = () => {
 
         {data.map((elem,index)=>(
         <Blog key={index} data={elem} index={index} deleteHandler={deleteHandler} editHandler={editHandler} />
-
+        
         ))}
 
       </div>

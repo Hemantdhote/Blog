@@ -11,10 +11,10 @@ const NavBar = () => {
   return (
     <div className='bg-neutral-100'>
     <div className=' text-white flex  items-center justify-between px-8 py-8 bg-[#F5BA13] '>
-        <Link className='text-xl font-bold' to={"/dashboard"}>DashBoard</Link>
-        <button onClick={logoutHandler} >Logout</button>
+        <Link className='text-[1.5vw] font-bold' to={"/dashboard"}>DashBoard</Link>
+        <button className='text-[1.1vw]' onClick={logoutHandler} >Logout</button>
     </div>
-    <h1 className='flex items-center justify-center h-[80vh] text-2xl text-green-600 font-bold capitalize'>click on the dashboard for creating blog</h1>
+    <h1 className='flex items-center justify-center h-[80vh] text-[2.1vw] text-green-600 font-bold capitalize'>click on the dashboard for creating blog</h1>
     </div>
   )
 }
